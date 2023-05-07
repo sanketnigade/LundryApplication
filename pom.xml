@@ -139,6 +139,7 @@
 </plugin>
             
         </plugins>
+             <finalName>washer-0.0.1-SANPSHOT</finalName>
     </build>
 
 </project>
