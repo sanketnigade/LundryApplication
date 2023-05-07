@@ -88,24 +88,10 @@
 
     <build>
         <plugins>
- <plugin>
-    <artifactId>maven-antrun-plugin</artifactId>
-    <executions>
-        <execution>
-            <phase>generate-resources</phase>
-            <configuration>
-                <target>
-                    <copy todir="${project.build.directory}/classes/public">
-                        <fileset dir="${project.basedir}/LaundryFrontEnd/build"/>
-                    </copy>
-                </target>
-            </configuration>
-            <goals>
-                <goal>run</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
+                 <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 <plugin>
     <groupId>com.github.eirslett</groupId>
     <artifactId>frontend-maven-plugin</artifactId>
@@ -144,11 +130,25 @@
             </configuration>
         </execution>
     </executions>
+</plugin> <plugin>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <executions>
+        <execution>
+            <phase>generate-resources</phase>
+            <configuration>
+                <target>
+                    <copy todir="${project.build.directory}/classes/public">
+                        <fileset dir="${project.basedir}/LaundryFrontEnd/build"/>
+                    </copy>
+                </target>
+            </configuration>
+            <goals>
+                <goal>run</goal>
+            </goals>
+        </execution>
+    </executions>
 </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            
         </plugins>
     </build>
 
